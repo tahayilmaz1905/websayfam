@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezzetli Yemekler</title>
+    <style>
+        /* Genel Ayarlar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+        }
+        header {
+            background-color: #e3651d;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 30px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: chartreuse;
+        }
+
+        /* Arama alanı */
+        .search-container {
+            max-width: 900px;
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .search-container input[type="text"] {
+            padding: 20px;
+            width: 70%;
+            border-radius: 50px 0 0 50px;
+            border: 2px solid #e3651d;
+            outline: none;
+            font-size: 18px;
+            transition: width 0.3s ease;
+        }
+        .search-container input[type="text"]:focus {
+            width: 80%;
+        }
+        .search-container button {
+            padding: 20px 30px;
+            background-color: #FF0004;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .search-container button:hover {
+            background-color: #c80000;
+        }
+
+        /* Hero Alanı */
+        .hero {
+            background-image: url("860.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 120px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            font-weight: lighter;
+        }
+        .button {
+            display: inline-block;
+            background-color: coral;
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff6347;
+        }
+
+        /* Menü ve Yemekler Bölümleri */
+        .promotion, .featured, .menu, .sweet {
+            width: 90%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .promotion h2, .featured h2, .menu h2, .sweet h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .menu-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .menu-item {
+            width: 30%;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .menu-item img:hover {
+            transform: scale(1.05);
+        }
+        .menu-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .menu-item p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .menu-item span {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #e3651d;
+            margin-bottom: 15px;
+        }
+        .order-button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: #218838;
+        }
+        .tag {
+            background-color: chocolate;
+            color: #fff !important;
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: absolute;
+            font-size: 12px;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* Üstü çizili fiyatlar kırmızıya */
+        del {
+            color: red; /* Üstü çizili fiyatları kırmızıya çevir */
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .menu-item {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .menu-item {
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: darkkhaki;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+        .footer a {
+            color: #fff;
+        }
+    </style>
+    <script>
+        function searchFood() {
+            var query = document.getElementById("foodSearch").value;
+            var url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+            window.open(url, "_blank");
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Lezzetli Yemekler</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#">Menüler</a></li>
+                <li><a href="hakkımızda.html">Hakkımızda</a></li>
+                <li><a href="iletişim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="foodSearch" placeholder="Yemek Ara..."/>
+        <button type="button" onclick="searchFood()">Ara</button>
+    </div>
+
+    <div class="hero">
+        <h1>Lezzetli Yemeklerin Tek Adresi</h1>
+        <p>Lezzetli yemekler size bir tık uzakta, hemen ara, keşfet ve faydalan!</p>
+        <a href="#" class="button">Yemekleri Keşfet</a>
+    </div>
+
+    <section class="promotion">
+        <h2>İndirimli Yemekler</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="iskender-kebap-tereyagli.webp" alt="İskender Kebap">
+                <h3>İskender</h3>
+                <p>İskender, ince dilimlenmiş döner etinin yoğurt, tereyağı ve özel domates sosuyla servis edildiği, Türk mutfağının en sevilen lezzetlerinden biridir.</p>
+                <span><del>285 TL</del> &nbsp; 280 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="adana-kebap.webp" alt="Adana Kebap">
+                <h3>Adana Kebap</h3>
+                <p>Adana kebap, baharatlarla yoğrulmuş ve mangalda pişirilen enfes lezzetiyle ünlü bir Türk kebabıdır.</p>
+                <span><del>400 TL</del> &nbsp; 375 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="lahmacun.webp" alt="Lahmacun">
+                <h3>Lahmacun</h3>
+                <p>Lahmacun, ince açılmış hamurun üzerine kıyma, sebze ve baharat karışımının yayılmasıyla yapılan nefis bir Türk yemeğidir.</p>
+                <span><del>200 TL</del> &nbsp; 150 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <h2>Popüler Yemekler</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="icli-kofte.webp" alt="İçli Köfte">
+                <h3>İçli Köfte</h3>
+                <p>İçli köfte, ince bulgur hamurunun içine kıyma, ceviz ve baharatlar eklenerek yapılan nefis bir geleneksel Türk yemeğidir.</p>
+                <span>80 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+                <span class="tag">Popüler</span>
+            </div>
+            <div class="menu-item">
+                <img src="imambayildi.webp" alt="İmam Bayıldı">
+                <h3>İmam Bayıldı</h3>
+                <p>İmam bayıldı, zeytinyağında pişirilen patlıcanın içi soğan, domates ve baharatlarla doldurularak soğuk servis edilen nefis bir yemeğidir.</p>
+                <span>75 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+                <span class="tag">Popüler</span>
+            </div>
+            <div class="menu-item">
+                <img src="karniyarik.webp" alt="Karnıyarık">
+                <h3>Karnıyarık</h3>
+                <p>Karnıyarık, patlıcanın içinin kıyma, soğan, biber ve baharatlarla doldurulup pişirilerek yapılan nefis bir Türk yemeğidir.</p>
+                <span>90 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+                <span class="tag">Popüler</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu">
+        <h2>Tüm Yemekler</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="guvecte-pastirmali-kuru-fasulye.webp" alt="Kuru Fasulye">
+                <h3>Kuru Fasulye</h3>
+                <p>Kuru fasulye, genellikle etli veya sade pişirilen besleyici bir Türk yemeğidir.</p>
+                <span>100 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="images.jpeg" alt="Pide">
+                <h3>Pide</h3>
+                <p>Pide, taş fırında pişirilen, farklı malzemelerle yapılan Türk mutfağının sevilen lezzetlerinden biridir.</p>
+                <span>150 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="kumpir.webp" alt="Kumpir">
+                <h3>Kumpir</h3>
+                <p>Kumpir, fırınlanmış patatesin üzerine çeşitli malzemeler eklenerek yapılan sokak yemeğidir.</p>
+                <span>120 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="sweet">
+        <h2>Tüm Tatlılar</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="baklava.webp" alt="Baklava">
+                <h3>Baklava</h3>
+                <p>Baklava, ince yufkaların arasına ceviz, fıstık gibi malzemelerle yapılan Türk tatlısıdır.</p>
+                <span>25 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="kazandibi.webp" alt="Kazandibi">
+                <h3>Kazandibi</h3>
+                <p>Kazandibi, süt, şeker ve nişasta ile yapılan kıvamlı bir Türk tatlısıdır.</p>
+                <span>85 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="sutlac.webp" alt="Sütlaç">
+                <h3>Sütlaç</h3>
+                <p>Sütlaç, pirinç, süt ve şekerle yapılan geleneksel sütlü tatlıdır.</p>
+                <span>87.5 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy;2025 Lezzetli Yemekler Web Sitesi</p>
+    </footer>
+</body>
+</html>
