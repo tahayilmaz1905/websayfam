@@ -192,7 +192,7 @@
 
         /* Üstü çizili fiyatlar kırmızıya */
         del {
-            color: red; /* Üstü çizili fiyatları kırmızıya çevir */
+            color: red;
         }
 
         /* Responsive Tasarım */
@@ -223,6 +223,10 @@
     <script>
         function searchFood() {
             var query = document.getElementById("foodSearch").value;
+            if(query.trim() === "") {
+                alert("Lütfen aramak istediğiniz yemek adını yazınız.");
+                return;
+            }
             var url = "https://www.google.com/search?q=" + encodeURIComponent(query);
             window.open(url, "_blank");
         }
@@ -300,10 +304,10 @@
                 <span class="tag">Popüler</span>
             </div>
             <div class="menu-item">
-                <img src="karniyarik.webp" alt="Karnıyarık">
-                <h3>Karnıyarık</h3>
-                <p>Karnıyarık, patlıcanın içinin kıyma, soğan, biber ve baharatlarla doldurulup pişirilerek yapılan nefis bir Türk yemeğidir.</p>
-                <span>90 TL</span>
+                <img src="keşkek.webp" alt="Keşkek">
+                <h3>Keşkek</h3>
+                <p>Keşkek, buğday ve etin uzun süre pişirilmesiyle hazırlanan, özel günlerde sunulan geleneksel bir Türk yemeğidir.</p>
+                <span>65 TL</span>
                 <button class="order-button">Sipariş Ver</button>
                 <span class="tag">Popüler</span>
             </div>
@@ -311,61 +315,132 @@
     </section>
 
     <section class="menu">
-        <h2>Tüm Yemekler</h2>
+        <h2>Diğer Menü Seçenekleri</h2>
         <div class="menu-items">
             <div class="menu-item">
-                <img src="guvecte-pastirmali-kuru-fasulye.webp" alt="Kuru Fasulye">
-                <h3>Kuru Fasulye</h3>
-                <p>Kuru fasulye, genellikle etli veya sade pişirilen besleyici bir Türk yemeğidir.</p>
-                <span>100 TL</span>
-                <button class="order-button">Sipariş Ver</button>
-            </div>
-            <div class="menu-item">
-                <img src="images.jpeg" alt="Pide">
-                <h3>Pide</h3>
-                <p>Pide, taş fırında pişirilen, farklı malzemelerle yapılan Türk mutfağının sevilen lezzetlerinden biridir.</p>
-                <span>150 TL</span>
-                <button class="order-button">Sipariş Ver</button>
-            </div>
-            <div class="menu-item">
-                <img src="kumpir.webp" alt="Kumpir">
-                <h3>Kumpir</h3>
-                <p>Kumpir, fırınlanmış patatesin üzerine çeşitli malzemeler eklenerek yapılan sokak yemeğidir.</p>
+                <img src="alabalik.webp" alt="Alabalık">
+                <h3>Alabalık</h3>
+                <p>Doğal kaynaklardan gelen taze alabalık, çeşitli soslarla servis edilir.</p>
                 <span>120 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="arabaşı.webp" alt="Arabaşı">
+                <h3>Arabaşı</h3>
+                <p>Hamurun et suyu ile hazırlanıp, yanında tavuk suyu ve baharatlarla servis edilen yöresel yemek.</p>
+                <span>90 TL</span>
+                <button class="order-button">Sipariş Ver</button>
+            </div>
+            <div class="menu-item">
+                <img src="baklava.webp" alt="Baklava">
+                <h3>Baklava</h3>
+                <p>Şerbetli, çıtır çıtır, cevizli ve fıstıklı tatlı şöleni.</p>
+                <span>50 TL</span>
                 <button class="order-button">Sipariş Ver</button>
             </div>
         </div>
     </section>
 
     <section class="sweet">
-        <h2>Tüm Tatlılar</h2>
+        <h2>Tatlılar</h2>
         <div class="menu-items">
             <div class="menu-item">
-                <img src="baklava.webp" alt="Baklava">
-                <h3>Baklava</h3>
-                <p>Baklava, ince yufkaların arasına ceviz, fıstık gibi malzemelerle yapılan Türk tatlısıdır.</p>
-                <span>25 TL</span>
+                <img src="sutlac.webp" alt="Sütlaç">
+                <h3>Sütlaç</h3>
+                <p>Fırında hafifçe kızarmış, süt ve pirinçle yapılan nefis tatlı.</p>
+                <span>35 TL</span>
                 <button class="order-button">Sipariş Ver</button>
             </div>
             <div class="menu-item">
                 <img src="kazandibi.webp" alt="Kazandibi">
                 <h3>Kazandibi</h3>
-                <p>Kazandibi, süt, şeker ve nişasta ile yapılan kıvamlı bir Türk tatlısıdır.</p>
-                <span>85 TL</span>
+                <p>Karamelize edilmiş sütlü tatlı, hafif ve lezzetli.</p>
+                <span>40 TL</span>
                 <button class="order-button">Sipariş Ver</button>
             </div>
             <div class="menu-item">
-                <img src="sutlac.webp" alt="Sütlaç">
-                <h3>Sütlaç</h3>
-                <p>Sütlaç, pirinç, süt ve şekerle yapılan geleneksel sütlü tatlıdır.</p>
-                <span>87.5 TL</span>
+                <img src="gullac.webp" alt="Güllaç">
+                <h3>Güllaç</h3>
+                <p>Ramazana özgü sütlü ve gül aromalı hafif tatlı.</p>
+                <span>45 TL</span>
                 <button class="order-button">Sipariş Ver</button>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy;2025 Lezzetli Yemekler Web Sitesi</p>
+        <p>© 2023 Lezzetli Yemekler | <a href="https://tahayilmazozdemir.com" target="_blank" rel="noopener noreferrer">Taha Yılmaz Özdemir</a></p>
     </footer>
+
+    <!-- Responsive Düzenlemeler -->
+    <style>
+        /* Navigation menüyü mobilde dikey yap */
+        @media (max-width: 768px) {
+            nav ul {
+                text-align: center;
+                padding: 0;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Arama kutusu küçük ekranlarda alt alta */
+        @media (max-width: 480px) {
+            .search-container {
+                flex-direction: column;
+                max-width: 95%;
+                margin: 20px auto;
+            }
+            .search-container input[type="text"] {
+                width: 100% !important;
+                border-radius: 50px;
+                margin-bottom: 10px;
+                padding: 15px;
+                font-size: 16px;
+            }
+            .search-container button {
+                width: 100%;
+                border-radius: 50px;
+                padding: 15px;
+                font-size: 16px;
+            }
+        }
+
+        /* Hero alanı yazı ve padding küçült */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 15px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            .button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+        }
+
+        /* Menü öğelerindeki metin ve buton küçültme */
+        @media (max-width: 480px) {
+            .menu-item h3 {
+                font-size: 20px;
+            }
+            .menu-item p {
+                font-size: 14px;
+            }
+            .order-button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+
 </body>
 </html>
+
