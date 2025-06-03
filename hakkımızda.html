@@ -1,144 +1,90 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hakkımızda</title>
-  <style>
-    /* Genel stil */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0 10px;
-      background-color: #f8f9fa;
-      font-size: 16px;
-    }
-
-    /* Hakkımızda kısmı */
-    .about-us {
-      background: linear-gradient(135deg, #ff6f61, #ff9f80);
-      padding: 60px 20px 40px;
-      text-align: center;
-      color: white;
-    }
-
-    .about-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      color: #333;
-      text-align: left;
-    }
-
-    /* Animasyonlu Başlık */
-    .about-title {
-      font-size: 36px;
-      font-weight: bold;
-      background: linear-gradient(to right, #ffffff, #ff6f61);
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: titleAnimation 2s ease-in-out infinite;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    /* Başlık animasyonu */
-    @keyframes titleAnimation {
-      0% {
-        transform: scale(1);
-        opacity: 0.5;
-      }
-      50% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 0.5;
-      }
-    }
-
-    .about-text {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    /* Buton */
-    .about-button {
-      padding: 12px 30px;
-      background-color: #ff6f61;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-transform: uppercase;
-      text-decoration: none;
-      margin-top: 20px;
-      display: inline-block;
-      transition: background-color 0.3s;
-      text-align: center;
-    }
-
-    .about-button:hover {
-      background-color: #e64a3c;
-    }
-
-    /* Mobil uyumlu ayarlar */
-    @media (max-width: 599px) {
-      body {
-        font-size: 15px;
-        padding: 0 10px;
-      }
-
-      .about-us {
-        padding: 40px 15px 30px;
-      }
-
-      .about-container {
-        padding: 20px 15px;
-      }
-
-      .about-title {
-        font-size: 28px;
-      }
-
-      .about-text {
-        font-size: 16px;
-      }
-
-      .about-button {
-        width: 100%;
-        padding: 14px 0;
-        font-size: 18px;
-        margin-top: 25px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <section class="about-us">
-    <div class="about-container">
-      <h2 class="about-title">Hakkımızda</h2>
-      <p class="about-text">
-        Lezzetli yemekler ve unutulmaz deneyimler için buradayız! Biz, kaliteli malzemelerle özenle hazırlanan yemekleri
-        sizlerle buluşturmayı hedefliyoruz. Her yemeğimizde taze, organik ve yöresel ürünleri kullanarak sofralarınıza
-        sağlıklı ve lezzetli seçenekler sunuyoruz.
+<section class="founder-section">
+  <h2>Kurucumuz</h2>
+  <div class="founder-profile">
+    <img src="kurucu.jpg.jpg" alt="Kurucu Fotoğrafı" />
+    <div class="founder-info">
+      <h3>Taha Yılmaz Özdemir</h3>
+      <p><strong>Okuduğu Okul:</strong> Fatih Mesleki Ve Teknik Anadolu Lisesi  </p>
+      <p><strong>Doğum Tarihi:</strong> 23 Ağustos 2008</p>
+      <p><strong>Yaş:</strong> 16</p>
+      <p><strong>Memleket:</strong> Ankara, Türkiye</p>
+      <p><strong>Telefon:</strong> <a href="tel:+905358149208">+90 535 814 92 08</a></p>
+      <p>
+       Merhaba, ben Taha Özdemir, meslek lisesinde 11. sınıf öğrencisiyim ve yazılım alanında eğitim alıyorum. Kod yazmaya ve teknolojiye olan ilgimle, özellikle [ilgi duyduğunuz bir alan, örn. web geliştirme, mobil uygulama] üzerine çalışmayı seviyorum. Okulda öğrendiğim programlama dilleri ve teknolojilerle projeler geliştiriyor, kendimi sürekli geliştirmeye özen gösteriyorum. Hedefim, yenilikçi ve kullanıcı dostu yazılımlar üreterek teknoloji dünyasında fark yaratmak.
       </p>
-      <p class="about-text">
-        Müşteri memnuniyetini ön planda tutarak, her bir tarifte geleneksel tatları modern dokunuşlarla birleştiriyoruz.
-        Hedefimiz, her lokmada mutlu etmenin keyfini sizlerle paylaşmak.
-      </p>
-      <!-- Buton ekledik, kullanıcıyı bir sayfaya yönlendirebilir -->
-      
+      <p><strong>Vizyon:</strong> Teknoloji ile hayatı kolaylaştırmak ve yaratıcı çözümler sunmak.</p>
+      <div class="founder-socials">
+        <a href="https://www.instagram.com/tahayozdemir" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-</body>
-</html>
+<style>
+  .founder-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  .founder-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #ff6f61;
+  }
+  .founder-profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+  }
+  .founder-profile img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .founder-info {
+    max-width: 600px;
+  }
+  .founder-info h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #ff6f61;
+  }
+  .founder-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .founder-socials a {
+    margin-top: 10px;
+    font-size: 32px;
+    color: #ff6f61;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+  }
+  .founder-socials a:hover {
+    color: #e14e3d;
+    transform: scale(1.2);
+  }
+  @media (max-width: 600px) {
+    .founder-profile {
+      flex-direction: column;
+    }
+    .founder-info {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+</style>
 
